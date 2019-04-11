@@ -122,6 +122,11 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
       ),
+      persistentFooterButtons: <Widget>[
+        new IconButton(icon: new Icon(Icons.home), onPressed: () => _onSubmit('Footer Button 1') ),
+        new IconButton(icon: new Icon(Icons.people), onPressed: () => _onSubmit('Footer Button 2')),
+        new IconButton(icon: new Icon(Icons.accessibility), onPressed: () => _onSubmit('Footer Button 3')),
+      ],
       body: new Container(
         padding: new EdgeInsets.all(32.0),
         child: new Column(
