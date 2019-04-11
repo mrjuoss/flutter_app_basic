@@ -13,8 +13,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   String _value = 'Default Value from Variable';
+
   /* Tanpa Parameter */
   void _onPressed() {
     setState(() {
@@ -85,8 +85,7 @@ class _MyAppState extends State<MyApp> {
         context: context,
         initialDate: new DateTime.now(),
         firstDate: new DateTime(2016),
-        lastDate: new DateTime(2020)
-    );
+        lastDate: new DateTime(2020));
 
     if (picked != null) setState(() => _dateValue = picked.toString());
   }
@@ -102,6 +101,12 @@ class _MyAppState extends State<MyApp> {
           new IconButton(icon: Icon(Icons.add), onPressed: _add),
           new IconButton(icon: Icon(Icons.remove), onPressed: _substract)
         ],
+      ),
+      floatingActionButton: new FloatingActionButton(
+        onPressed: _onPressedFlatButton,
+        backgroundColor: Colors.redAccent,
+        mini: true,
+        child: new Icon(Icons.timer),
       ),
       body: new Container(
         padding: new EdgeInsets.all(32.0),
@@ -129,9 +134,10 @@ class _MyAppState extends State<MyApp> {
 
             /* Icon Button */
             new IconButton(icon: Icon(Icons.add), onPressed: _add),
-
-            new Text('Nilainya adalah $_jml', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 37.0),),
-
+            new Text(
+              'Nilainya adalah $_jml',
+              style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 37.0),
+            ),
             new IconButton(icon: Icon(Icons.remove), onPressed: _substract),
 
             /* Edit Text */
@@ -169,12 +175,9 @@ class _MyAppState extends State<MyApp> {
             /* Date Picker */
             new Text(_dateValue),
             new RaisedButton(
-                onPressed: _selectDate,
-                child: new Text('Select Date!'),
+              onPressed: _selectDate,
+              child: new Text('Select Date!'),
             ),
-
-
-
           ],
         ),
       ),
