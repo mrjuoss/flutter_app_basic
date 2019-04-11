@@ -96,7 +96,12 @@ class _MyAppState extends State<MyApp> {
     return new Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: new AppBar(
-        title: new Text('Flutter BAsic App'),
+        title: new Text('Flutter Basic App'),
+        backgroundColor: Colors.redAccent,
+        actions: <Widget>[
+          new IconButton(icon: Icon(Icons.add), onPressed: _add),
+          new IconButton(icon: Icon(Icons.remove), onPressed: _substract)
+        ],
       ),
       body: new Container(
         padding: new EdgeInsets.all(32.0),
@@ -125,7 +130,7 @@ class _MyAppState extends State<MyApp> {
             /* Icon Button */
             new IconButton(icon: Icon(Icons.add), onPressed: _add),
 
-            new Text('Nilainya adalah $_jml'),
+            new Text('Nilainya adalah $_jml', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 37.0),),
 
             new IconButton(icon: Icon(Icons.remove), onPressed: _substract),
 
